@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,6 +24,11 @@ Route::get('/admin',function()
 {
     return view('admin.index');
 });
+
+Route::resource('admin/users','AdminUsersController');
+Route::get('admin/users/create','AdminUsersController@create');
+Route::post('create/post','AdminUsersController@store');
+
 
 
 
